@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Nombre</td>
+                <td>Sexo</td>
+                <td>Edad</td>
+                <td>Fecha de Rescata</td>
+                <td>Adoptante</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% if lista_mascotas %}
+            {% for mascota in lista_mascotas %}
+            <tr>
+                <td>{{ mascota.folio }}</td>
+                <td>{{ mascota.nombre }}</td>
+                <td>{{ mascota.sexo }}</td>
+                <td>{{ mascota.edad_aproximada }}</td>
+                <td>{{ mascota.fecha_rescate }}</td>
+                <td>{{ mascota.persona.nombre }} {{ mascota.persona.apellidos }}</td>
+                <td>
+                    <button>Editar</button>
+                    <button >Eliminar</button>
+                </td>
+            </tr>
+            {% endfor %}
+            {% else %}
+                <h1>No Hay Registros</h1>
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock %}

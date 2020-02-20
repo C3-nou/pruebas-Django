@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Document {% endblock %} </title>
+</head>
+<body>
+    {% block header %}
+        {% include 'base/header.html' %}
+    {% endblock %}
+
+    {% block content %}
+        <p style="color: yellowgreen;">Body APP</p>
+    {% endblock %}
+
+    {% block footer %}
+        <p style="color: rgb(53, 50, 205);">Footer Base</p>
+    {% endblock %}
+
+</body>
+</html>
